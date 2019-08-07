@@ -79,6 +79,11 @@
         default: '#e0e0e0',
         validator: validateColor,
       },
+
+      uid: {
+        type: String,
+        required: true
+      }
     },
 
     computed: {
@@ -91,11 +96,11 @@
       },
 
       gradientId () {
-        return `gradient-${this.uid}`;
+        return `gradient-${this.uid || this._uid}`;
       },
 
       clipPathId () {
-        return `clipPath-${this.uid}`;
+        return `clipPath-${this.uid || this._uid}`;
       },
 
       svg () {
@@ -114,16 +119,6 @@
           clipPath: 'url(#' + this.clipPathId + ')',
         };
       },
-    },
-
-    data () {
-      return {
-        uid: null,
-      };
-    },
-
-    created () {
-      this.uid = this._uid;
-    },
+    }
   };
 </script>

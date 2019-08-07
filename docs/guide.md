@@ -50,6 +50,9 @@ All presets accept the props below, but they *may* have other custom props
 | height    | Number  | 150     | Height component |
 | primary   | String  | #f0f0f0 | SVG Background   |
 | secondary | String  | #e0e0e0 | Animation color  |
+| uid       | String  |         | Unique ID        |
+
+We need a unique ID as dom id to locaiton svg defs. So the uid should unique.
 
 Color props are required to be *HEX* with a proper pound sign ('#') as its prefix.
 
